@@ -1,0 +1,23 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Bottles</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentBottle : ${bottles}" >
+<td th:text="${currentBottle.id}" />
+ <td th:text="${currentBottle.brand}" />
+ <td th:text="${currentBottle.varietal}" />
+ <td th:text="${currentBottle.yearBottled}" />
+ <td th:text="${currentBottle.yearsToAge}"  /> 
+<td><a th:href="@{/edit/{id}(id=${currentBottle.id})}">Edit</a></td>
+<td><a
+th:href="@{/delete/{id}(id=${currentBottle.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputBottle">Add a new bottle</a>
+</body>
+</html>
