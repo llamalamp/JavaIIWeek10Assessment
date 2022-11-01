@@ -1,0 +1,16 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Bottle</title>
+</head>
+<body>
+<form th:object="${newBottle}" th:action="@{/update/{id}(id=${newBottle.id})}" method=POST>
+Brand: <input name="brand" size="20" th:field="*{brand}"><br />
+Varietal: <input name="varietal" size="20" th:field="*{varietal}"><br />
+Year Bottled: <input name="yearBottled" size="20" th:field="*{yearBottled}"><br />
+Years to age: <input name="yearsToAge" size="20" th:field="*{yearsToAge}"><br />
+<input name="submit" type="submit" value="submit" />
+</form>
+<a href="viewAll">View all Bottles</a>
+</body>
+</html>
